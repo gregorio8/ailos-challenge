@@ -10,11 +10,5 @@ export class CardComponent {
 
   @Input() userData: ICardInfo | null = null;
 
-  constructor() {
-
-  }
-
-  ngOnInit() {
-    console.log('aa', this.userData);
-  }
+  constructor() { }
 }

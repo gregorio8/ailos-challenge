@@ -11,10 +11,6 @@ export class FooterComponent {
   @Input() hasChanged: boolean = false;
   @Output() emitData: any = new EventEmitter();
 
-  ngOnInit() {
-    console.log('->>', this.userData);
-  }
-
   emitNextStep() {
     this.emitData.emit();
     this.hasChanged = true;

@@ -17,6 +17,11 @@ export class SideBarComponent implements OnInit {
 
   }
 
+  /**  
+   * Essa função seria implementada em uma possível continuação,
+   * onde iria usar o router atrelado aos icons para mudança de visualização
+   * @autor Pedro Gregorio 
+  */
   redirect(icon: string) {
     // this.router.navigate([`/${icon}`])
     console.log('redirect ->', icon);
