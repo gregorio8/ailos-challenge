@@ -1,0 +1,69 @@
+<ng-container style="display: flex;">
+  <app-side-bar></app-side-bar>
+  <div>
+    <app-header></app-header>
+    <div class="content">
+
+      <div class="stepper-container">
+        <mat-horizontal-stepper style="width: 100%;" [linear]="isLinear" #stepper labelPosition="bottom">
+          <mat-step [stepControl]="formCPFGroup" label="Início">
+            <div style="padding-top: 3%;">
+              <h3>Informe o CPF do futuro cooperado (a)</h3>
+              <pre class="info">
+                Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.
+                Digite apenas os números (sem pontos ou traços). 
+              </pre>
+              <label class="label-cpf">CPF</label>
+              <form class="cpf-form" [formGroup]="formCPFGroup">
+                <div class="form">
+                  <div class="form-box">
+                    <input [ngClass]="{'error': formCPFGroup.controls['CPF'].hasError('invalidCPF')}" class="input-cpf" matInput placeholder="000.000.000-00" required formControlName="CPF">
+                    <small class="error" *ngIf="formCPFGroup.controls['CPF'].hasError('invalidCPF')">
+                      Informe um CPF válido
+                    </small>
+                  </div>
+                  <app-button
+                  [buttonStyle]="{ backgroundColor: 'var(--primary-color)', color: 'white', fontSize: '16px', width: '172px', 
+                    height: '38px', borderRadius: '2px', border: 'none', fontWeight: '500', fontFamily: 'Open Sans',  cursor: 'pointer' }"
+                  [buttonText]="'Consultar por CPF'" (click)="onSearch()"
+                ></app-button>
+                </div>
+                <!-- <button mat-raised-button color="primary" matStepperNext>Consultar por CPF</button> -->
+              </form>
+
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="formDocumentsGroup" label="Documentos">
+            <div>
+              <form [formGroup]="formDocumentsGroup">
+                <ng-template matStepLabel>Documentos</ng-template>
+              </form>
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="formRegistrationDataGroup" label="Dados cadastrais">
+            <div>
+              <form [formGroup]="formRegistrationDataGroup">
+                <ng-template matStepLabel>Dados cadastrais</ng-template>
+              </form>
+            </div>
+          </mat-step>
+
+          <mat-step [stepControl]="formRegistrationDataGroup" label="Admissão">
+            <ng-template matStepLabel>Admissão</ng-template>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+
+      <ng-container *ngIf="userData">
+        <app-card class="card-container" [userData]="userData"></app-card>
+      </ng-container>
+
+    </div>
+    <app-footer (emitData)="nextStep()" [userData]="userData"></app-footer>
+  </div>
+</ng-container>
+
+
+<router-outlet></router-outlet>

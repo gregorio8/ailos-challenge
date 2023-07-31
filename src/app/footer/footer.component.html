@@ -1,0 +1,15 @@
+<ng-container>
+  <div class="footer">
+    <app-button *ngIf="userData?.situation && !hasChanged" (click)="emitNextStep()"
+    [buttonStyle]="{ backgroundColor: 'var(--primary-color)', color: 'white', fontSize: '16px', width: '218px', 
+      height: '48px', borderRadius: '2px', border: 'none', fontWeight: '500', fontFamily: 'Open Sans',  cursor: 'pointer' }"
+    [buttonText]="'Iniciar nova admissão'"
+  ></app-button>
+
+  <app-button
+    [buttonStyle]="{ backgroundColor: 'white', color: 'var(--primary-color)', fontSize: '16px', width: '274px',
+      height: '48px', borderRadius: '2px', border: '1px solid var(--primary-color)', fontWeight: '600', fontFamily: 'Open Sans',  cursor: 'pointer' }"
+    [buttonText]="'Dicas para abertura da conta'"
+  ></app-button>
+  </div>
+</ng-container>

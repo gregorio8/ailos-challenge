@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --primary-color: #165C7D; 
+  --secondary-color: #125D79;
+  --tertiary-color: #E7EEF1;
+  --quaternary-color: #FFF;
+}
+
+.white {
+  color: var(--quaternary-color);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Exo';
+}
+
+small {
+  font-family: 'Open Sans'
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+app-header {
+  width: calc(100vw - 100px);
+  height: 89px;
+  display: flex;
+}
+
+app-footer {
+  width: calc(100vw - 100px);
+  height: 78px;
+  position: fixed;
+  bottom: 0;
+}
+
+app-side-bar {
+  display: flex;
+  width: 100px;
+  height: 100%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+  --mat-stepper-header-selected-state-icon-foreground-color: white;
+  --mat-stepper-header-done-state-icon-background-color: var(--primary-color);
+  --mat-stepper-header-done-state-icon-foreground-color: white;
+  --mat-stepper-header-edit-state-icon-background-color: var(--primary-color);
+  --mat-stepper-header-edit-state-icon-foreground-color: white;
+  --mat-stepper-container-color: none;
+  --mat-stepper-line-color: #889499;
+  --mat-stepper-header-label-text-color: #889499;
+  --mat-stepper-header-icon-background-color: #889499;
+  --mat-stepper-header-selected-state-label-text-color: var(--primary-color);
+  --mat-stepper-header-selected-state-icon-background-color: var(--primary-color);
+}
+
+.mat-step-icon .mat-icon {
+  font-size: 0 !important;
+}
+
+.mat-step-icon {
+  color: transparent !important;
+  height: 20px !important;
+  width: 20px !important;
+  top: 2px;
+}
+
+.mat-step-icon-selected {
+  background-color: transparent !important;
+  height: 16px !important;
+  width: 16px !important;
+  border: 2px solid var(--primary-color);
+  top: 2px;
+}
+
+.mat-horizontal-stepper-header-container {
+  white-space: nowrap;
+  display: flex;
+  width: 596px;
+  margin: auto;
+}
+
+.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::before, [dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::before, .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:last-child)::after, [dir=rtl] .mat-stepper-label-position-bottom .mat-horizontal-stepper-header:not(:first-child)::after {
+  width: calc(58% - 20px) !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: transparent;
+  padding: 0;
+}
+

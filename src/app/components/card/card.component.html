@@ -1,0 +1,86 @@
+<div class="card" *ngIf="userData">
+  <div class="title-container">
+    <span class="title">Situação cadastral do CPF</span>
+    <small>Consulta na Receita Federal</small>
+  </div>
+  <div class="card-info info-align">
+    <span class="material-symbols-sharp person-icon default-icon">
+      person
+    </span>
+    <div class="card-info-inside">
+      <small>Nome</small>
+      <span class="text">{{ userData.name }}</span>
+    </div>
+  </div>
+  <div class="card-info">
+    <span *ngIf="userData.situation" class="material-symbols-outlined check-icon default-icon">
+      check_circle
+    </span>
+
+    <span *ngIf="!userData.situation" class="material-symbols-outlined error-icon default-icon">
+      cancel
+      </span>
+    <div class="card-info-inside">
+      <small>Situação do CPF</small>
+      <span class="text">{{ userData.situation ? 'Regular' : 'Inválida' }}</span>
+    </div>
+  </div>
+</div>
+
+<div class="card" *ngIf="userData?.applicationAccount">
+  <div class="title-container">
+    <span class="title">Conta aplicação</span>
+    <small>Cooperativa Viacredi</small>
+  </div>
+  <div class="card-info info-align">
+    <span class="material-symbols-outlined person-icon default-icon">
+      credit_card
+      </span>
+    <div class="card-info-inside">
+      <small>Número da conta</small>
+      <span class="text">{{ userData?.applicationAccount }}</span>
+    </div>
+  </div>
+  <div class="card-info btn-container">
+    <button class="btn">Duplicar conta</button>
+  </div>
+</div>
+
+<div class="card" *ngIf="userData?.checkingAccount">
+  <div class="title-container">
+    <span class="title">Conta corrente</span>
+    <small>Cooperativa Viacredi</small>
+  </div>
+  <div class="card-info info-align">
+    <span class="material-symbols-outlined person-icon default-icon">
+      credit_card
+      </span>
+    <div class="card-info-inside">
+      <small>Número da conta</small>
+      <span class="text">{{ userData?.checkingAccount }}</span>
+    </div>
+  </div>
+  <div class="card-info btn-container">
+    <button class="btn">Duplicar conta</button>
+  </div>
+</div>
+
+<!-- <div class="card" *ngIf="userData?.applicationAccount">
+  <div>
+    <span class="title">Situação cadastral do CPF</span>
+    <small>Consulta na Receita Federal</small>
+  </div>
+  <div>
+    <span>Nome: {{ userData.name }}</span>
+    <small>CPF: {{ userData.cpf }}</small>
+  </div>
+  <div>
+    <small>Situação: {{ userData.situation ? 'Regular' : 'Inválida' }}</small>
+    <span *ngIf="userData.applicationAccount">
+      Application Account: {{ userData.applicationAccount }} 
+    </span>
+    <span *ngIf="userData.checkingAccount">
+      Checking Account: {{ userData.checkingAccount }}
+    </span>
+  </div>
+</div> -->

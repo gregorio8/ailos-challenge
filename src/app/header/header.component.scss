@@ -1,0 +1,52 @@
+.header {
+  background-color: #FFFFFF;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.titles-container {
+  padding: 20px 24px;
+  width: fit-content;
+}
+
+.sub-title {
+  color: #787878;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: 'Exo';
+  font-weight: 700;
+  margin: 0;
+}
+
+.general {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  span {
+    font-size: 29px;
+    color: var(--secondary-color);
+  }
+
+  img {
+    width: 40px;
+    height: 42px;
+    border-radius: 25px;
+    border: 1px solid var(--secondary-color);
+  }
+
+  button {
+    width: 109px;
+    height: 32px;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    background: none;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0 15px;
+  }
+}
